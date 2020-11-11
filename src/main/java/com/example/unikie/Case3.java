@@ -9,17 +9,14 @@ public class Case3 {
 
     public int solution(String[] T, String[] R) {
 
-        List<String> listT = Arrays.stream(T).collect(Collectors.toList());
-        List<String> listR = Arrays.stream(R).collect(Collectors.toList());
-
         List<String> failed = new ArrayList<>();
         List<String> passed = new ArrayList<>();
 
-        for(int i=0; i < listR.size(); i++) {
-            if (!listR.get(i).equals("OK")) {
-                failed.add(listT.get(i));
+        for(int i=0; i < R.length; i++) {
+            if (!R[i].equals("OK")) {
+                failed.add(T[i]);
             } else {
-                passed.add(listT.get(i));
+                passed.add(T[i]);
             }
         }
 
